@@ -1,0 +1,84 @@
+import React, { useState } from "react";
+import "./App.css";
+import logo from "./assets/images/logo.png"; // Path to your logo
+
+
+import Header from "./components/Header";
+
+
+
+const AdminLogin = () => {
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const validateForm = (e) => {
+        e.preventDefault();
+        const username = e.target.username.value.trim();
+        const password = e.target.password.value.trim();
+
+        if (username === "" || password === "") {
+            setErrorMessage("Please fill out all fields.");
+            return false;
+        }
+
+        setErrorMessage("");
+        console.log("Form submitted");
+        return true;
+    };
+
+    return (
+        <div>
+        <Header />
+        < div className = "log" >
+            <div className="login-container" >
+                <div className="login-content" >
+                    <h2>Admin Login </h2>
+                        < h3 > sign in to your account </h3>
+    { errorMessage && <div className="error-message" > { errorMessage } </div> }
+    <form onSubmit={ validateForm }>
+        <div className="form-group" >
+            <label htmlFor="username" > </label>
+                < input
+    type = "text"
+    id = "username"
+    name = "username"
+    placeholder = "Enter your username"
+    required
+        />
+        </div>
+        < div className = "form-group" >
+            <label htmlFor="password" > Password </label>
+                < div className = "password-container" >
+                    <input
+                    type="password"
+    id = "password"
+    name = "password"
+    placeholder = "Enter your password"
+    required
+        />
+        <button
+                    type="button"
+    className = "toggle-password"
+    onClick = {() => {
+    const passwordInput = document.getElementById("password");
+    passwordInput.type =
+        passwordInput.type === "password" ? "text" : "password";
+}}
+                  >
+                    👁
+</button>
+    </div>
+    </div>
+
+
+    < button type = "submit" className = "login-button" >
+        Login
+        </button>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+  );
+};
+
+export default AdminLogin;
