@@ -1,0 +1,45 @@
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(8px);
+    transform: scale(1.2);
+}
+
+
+.dashboard-page {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Black with 0.1 opacity */
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 200px;
+}
+
+.dashboard-container {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+    z-index: 500;
+    filter: opacity(1);
+}
+
+.graph,
+.calendar {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #ffffff;
+    flex: 1;
+}
+
+.graph h2,
+.calendar h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}

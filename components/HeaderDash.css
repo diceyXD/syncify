@@ -1,0 +1,23 @@
+/* src/header.css */
+/* src/components/header.css */
+.header {
+    position: fixed;
+    /* Fixes the header at the top */
+    top: 0;
+    /* Positions the header at the very top of the viewport */
+    left: 0;
+    width: 100%;
+    /* Ensures the header spans the full width of the viewport */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111111;
+    filter: opacity(0.95);
+    box-shadow: 0 4px 8px rgba(26, 25, 25, 0.1);
+    z-index: 1000;
+    /* Ensures the header stays above other content */
+}
+
+.logo {
+    max-height: 50px;
+}
